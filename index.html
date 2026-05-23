@@ -3,24 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SSC CGL DEO Typing Test Practice - Data Entry Speed Test</title>
-
 <meta name="description" content="SSC CGL DEO Typing Test Practice with TCS iON style interface. Practice Data Entry Speed Test, typing speed, accuracy and real SSC exam environment.">
-
-<meta name="keywords" content="SSC CGL DEO typing test, SSC CGL DEST practice, SSC data entry speed test, SSC CGL typing practice, data entry operator typing test">
-
 <meta name="google-site-verification" content="tW8cRSIvyoCElL6zoJE9PeLCSVrz981avVInEs7axNo" />
-
 <link rel="icon" href="https://res.cloudinary.com/dvnjhbz54/image/upload/v1771531264/favicon_nuw3of.ico">
-<link rel="apple-touch-icon" href="https://res.cloudinary.com/dvnjhbz54/image/upload/v1771509631/photo_6102735051574414807_y_ngjmnz.jpg">
 <link rel="canonical" href="https://surya123sankhla-lang.github.io/ssc-cgl-deo-typing-test/">
-
-<meta property="og:title" content="SSC CGL DEO Typing Test Practice">
-<meta property="og:description" content="Practice SSC CGL DEO Data Entry Speed Test with TCS iON style interface, timer, WPM and instant result.">
-<meta property="og:image" content="https://res.cloudinary.com/dvnjhbz54/image/upload/v1771509631/photo_6102735051574414807_y_ngjmnz.jpg">
-<meta property="og:url" content="https://surya123sankhla-lang.github.io/ssc-cgl-deo-typing-test/">
-<meta property="og:type" content="website">
 
 <style>
 *{box-sizing:border-box}
@@ -58,115 +45,91 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#e9eef2;color:#1
 .result-item{border:1px solid #d0d7de;background:#f8fbff;padding:16px;text-align:center}
 .result-item b{display:block;color:#1268b3;font-size:30px;margin-top:5px}
 .visit{display:block;width:max-content;margin:24px auto 0;background:#063b66;color:white;text-decoration:none;padding:12px 25px;border-radius:3px;font-weight:bold}
+@media(max-width:760px){.header{height:auto;padding:12px;flex-direction:column;gap:8px}.exam-area{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}}
 </style>
 </head>
 
 <body>
 
 <div id="testScreen">
+  <div class="top-strip"></div>
 
-<div class="top-strip"></div>
+  <div class="header">
+    <div class="brand">
+      <img src="https://res.cloudinary.com/dvnjhbz54/image/upload/v1771509631/photo_6102735051574414807_y_ngjmnz.jpg" alt="TypingNexus Logo">
+      <div>
+        <div class="brand-title">Typing<span>Nexus</span></div>
+        <div class="brand-sub">TYPE BETTER, SCORE BETTER</div>
+      </div>
+    </div>
 
-<div class="header">
-<div class="brand">
-<img src="https://res.cloudinary.com/dvnjhbz54/image/upload/v1771509631/photo_6102735051574414807_y_ngjmnz.jpg">
-<div>
-<div class="brand-title">Typing<span>Nexus</span></div>
-<div class="brand-sub">TYPE BETTER, SCORE BETTER</div>
-</div>
-</div>
+    <div class="user-box">
+      <div>
+        <div>Welcome, <b>SSC CGL DEO Aspirant</b></div>
+        <div>Time Left: <span class="timer" id="timer">05:00</span></div>
+      </div>
+      <div class="avatar">👤</div>
+    </div>
+  </div>
 
-<div class="user-box">
-<div>
-<div>Welcome, <b>SSC CGL DEO Aspirant</b></div>
-<div>Time Left: <span class="timer" id="timer">05:00</span></div>
-</div>
-<div class="avatar">👤</div>
-</div>
-</div>
+  <div class="official-cta">
+    <b>Official Mock Test Practice:</b>
+    SSC CGL DEO DEST ka full mock dene ke liye
+    <a href="https://typingnexus.in" target="_blank">TypingNexus.in par visit karein</a>
+  </div>
 
-<div class="official-cta">
-<b>Official Mock Test Practice:</b>
-SSC CGL DEO DEST ka full mock dene ke liye
-<a href="https://typingnexus.in" target="_blank">TypingNexus.in par visit karein</a>
-</div>
+  <div class="info-row">
+    <div>
+      Test Duration:
+      <select id="duration" onchange="changeDuration()">
+        <option value="120">2 Minutes</option>
+        <option value="300" selected>5 Minutes</option>
+        <option value="420">7 Minutes</option>
+      </select>
+    </div>
+    <div><b>SSC CGL DEO Data Entry Speed Test</b></div>
+  </div>
 
-<div class="info-row">
-<div>
-Test Duration:
-<select id="duration" onchange="changeDuration()">
-<option value="120">2 Minutes</option>
-<option value="300" selected>5 Minutes</option>
-<option value="420">7 Minutes</option>
-</select>
-</div>
+  <div class="page">
+    <div class="panel">
+      <div class="panel-title">Keyboard Typing QWERTY</div>
 
-<div><b>SSC CGL DEO Data Entry Speed Test</b></div>
-</div>
+      <div class="exam-area">
+        <div>
+          <div class="passage-box" id="passage"></div>
+          <textarea id="typingBox" class="typing-box" placeholder="Type the above text here..." oninput="startTest()"></textarea>
+        </div>
 
-<div class="page">
+        <div>
+          <div class="side-note">
+            SSC CGL DEO DEST me candidates ko speed aur accuracy maintain karni hoti hai. Daily typing practice improves performance in SSC data entry examinations.
+          </div>
 
-<div class="panel">
+          <div class="submit-wrap">
+            <button class="btn" onclick="submitTest()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="panel-title">Keyboard Typing QWERTY</div>
+    <section class="seo-content">
+      <h1>SSC CGL DEO Typing Test Practice - Data Entry Speed Test</h1>
+      <p>SSC CGL DEO Typing Test Practice tool specially designed hai un candidates ke liye jo SSC CGL Data Entry Operator aur DEST examinations ki preparation kar rahe hain. Data Entry Speed Test SSC recruitment process ka important stage hota hai jahan typing speed aur typing accuracy evaluate ki jaati hai.</p>
+      <p>Ye typing platform TCS iON style typing interface provide karta hai jisme candidates real exam environment me typing practice kar sakte hain. Candidates typing speed improve karne ke saath-saath typing consistency aur exam confidence bhi develop kar sakte hain.</p>
+      <h2>SSC CGL DEO Typing Rules</h2>
+      <ul>
+        <li>Typing Language: English</li>
+        <li>Skill Test Type: Data Entry Speed Test</li>
+        <li>Typing Duration: 15 Minutes official style</li>
+        <li>Practice Duration: 2, 5 and 7 Minutes</li>
+        <li>Backspace: Allowed</li>
+        <li>Recommended Accuracy: 90%+</li>
+      </ul>
+      <p>For official mock tests, typing rankings and advanced typing practice visit <a href="https://typingnexus.in" target="_blank">TypingNexus.in</a>.</p>
+    </section>
 
-<div class="exam-area">
-
-<div>
-
-<div class="passage-box" id="passage"></div>
-
-<textarea id="typingBox" class="typing-box" placeholder="Type the above text here..." oninput="startTest()"></textarea>
-
-</div>
-
-<div>
-
-<div class="side-note">
-SSC CGL DEO DEST me candidates ko speed aur accuracy maintain karni hoti hai. Daily typing practice improves performance in SSC data entry examinations.
-</div>
-
-<div class="submit-wrap">
-<button class="btn" onclick="submitTest()">Submit</button>
-</div>
-
-</div>
-</div>
-</div>
-
-<section class="seo-content">
-
-<h1>SSC CGL DEO Typing Test Practice - Data Entry Speed Test</h1>
-
-<p>
-SSC CGL DEO Typing Test Practice tool specially designed hai un candidates ke liye jo SSC CGL Data Entry Operator aur DEST examinations ki preparation kar rahe hain. Data Entry Speed Test SSC recruitment process ka important stage hota hai jahan typing speed aur typing accuracy evaluate ki jaati hai.
-</p>
-
-<p>
-Ye typing platform TCS iON style typing interface provide karta hai jisme candidates real exam environment me typing practice kar sakte hain. Candidates typing speed improve karne ke saath-saath typing consistency aur exam confidence bhi develop kar sakte hain.
-</p>
-
-<h2>SSC CGL DEO Typing Rules</h2>
-
-<ul>
-<li>Typing Language: English</li>
-<li>Skill Test Type: Data Entry Speed Test</li>
-<li>Typing Duration: 15 Minutes official style</li>
-<li>Practice Duration: 2, 5 and 7 Minutes</li>
-<li>Backspace: Allowed</li>
-<li>Recommended Accuracy: 90%+</li>
-</ul>
-
-<p>
-For official mock tests, typing rankings and advanced typing practice visit TypingNexus.in.
-</p>
-
-</section>
-
-<div class="footer-line">
-© <span id="yearBox"></span> TypingNexus.in
-</div>
-
+    <div class="footer-line">© <span id="yearBox"></span> TypingNexus.in</div>
+  </div>
 </div>
 
 <div class="result-screen" id="resultScreen">
@@ -185,7 +148,6 @@ For official mock tests, typing rankings and advanced typing practice visit Typi
         <div class="result-item">Typed Words <b id="words">0</b></div>
         <div class="result-item">Time Used <b id="timeUsed">0 Min</b></div>
       </div>
-
       <a class="visit" href="https://typingnexus.in" target="_blank">Visit Website</a>
     </div>
   </div>
@@ -235,14 +197,13 @@ function updateTimer(){
 function startTest(){
   if(started) return;
   started = true;
+  totalTime = parseInt(document.getElementById("duration").value);
+  timeLeft = totalTime;
 
   interval = setInterval(function(){
     timeLeft--;
     updateTimer();
-
-    if(timeLeft <= 0){
-      submitTest();
-    }
+    if(timeLeft <= 0){ submitTest(); }
   },1000);
 }
 
@@ -265,7 +226,6 @@ function submitTest(){
 
   const words = typed ? typed.split(/\s+/).length : 0;
   const minutesUsed = Math.max((totalTime - timeLeft)/60,0.1);
-
   const gross = Math.round(words/minutesUsed);
   const net = Math.max(0,Math.round((words-errors/5)/minutesUsed));
   const acc = typed.length ? Math.max(0,Math.round((correct/typed.length)*100)) : 0;
